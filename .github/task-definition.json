@@ -1,11 +1,10 @@
 {
   "family": "asj-test-task",
-  "executionRoleArn": "arn:aws:iam::166949175788:role/ecsTaskExecutionRole",
-  "networkMode": "awsvpc",
   "containerDefinitions": [
     {
       "name": "asj-test-container",
       "image": "166949175788.dkr.ecr.ap-northeast-2.amazonaws.com/asj-cicd-test:latest",
+      "cpu": 0,
       "portMappings": [
         {
           "containerPort": 3000,
@@ -13,10 +12,30 @@
           "protocol": "tcp"
         }
       ],
-      "essential": true
+      "essential": true,
+      "environment": [],
+      "mountPoints": [],
+      "volumesFrom": [],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "secretOptions": null,
+        "options": {
+          "awslogs-group": "/ecs/asj-test-task",
+          "awslogs-region": "ap-northeast-2",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
     }
   ],
+  "executionRoleArn": "arn:aws:iam::166949175788:role/ecsTaskExecutionRole",
+  "taskRoleArn": "arn:aws:iam::166949175788:role/ecsTaskExecutionRol",
+  "compatibilities": ["EC2", "FARGATE"],
+  "networkMode": "awsvpc",
   "requiresCompatibilities": ["FARGATE"],
   "cpu": "1024",
-  "memory": "4096"
+  "memory": "4096",
+  "runtimePlatform": {
+    "operatingSystemFamily": "LINUX",
+    "cpuArchitecture": null
+  }
 }
