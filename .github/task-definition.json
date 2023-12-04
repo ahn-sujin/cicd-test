@@ -1,0 +1,22 @@
+{
+  "family": "asj-test-task",
+  "executionRoleArn": "arn:aws:iam::166949175788:role/ecsTaskExecutionRole",
+  "networkMode": "awsvpc",
+  "containerDefinitions": [
+    {
+      "name": "asj-test-container",
+      "image": "166949175788.dkr.ecr.ap-northeast-2.amazonaws.com/asj-cicd-test:latest",
+      "portMappings": [
+        {
+          "containerPort": 3000,
+          "hostPort": 3000,
+          "protocol": "tcp"
+        }
+      ],
+      "essential": true
+    }
+  ],
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "1024",
+  "memory": "4096"
+}
