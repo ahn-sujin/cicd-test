@@ -1,5 +1,5 @@
 {
-  "family": "asj-test-task",
+  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:166949175788:task-definition/asj-test-task:4",
   "containerDefinitions": [
     {
       "name": "asj-test-container",
@@ -18,7 +18,6 @@
       "volumesFrom": [],
       "logConfiguration": {
         "logDriver": "awslogs",
-        "secretOptions": null,
         "options": {
           "awslogs-group": "/ecs/asj-test-task",
           "awslogs-region": "ap-northeast-2",
@@ -27,15 +26,49 @@
       }
     }
   ],
+  "family": "asj-test-task",
+  "taskRoleArn": "arn:aws:iam::166949175788:role/ecsTaskExecutionRole",
   "executionRoleArn": "arn:aws:iam::166949175788:role/ecsTaskExecutionRole",
-  "taskRoleArn": "arn:aws:iam::166949175788:role/ecsTaskExecutionRol",
-  "compatibilities": ["EC2", "FARGATE"],
   "networkMode": "awsvpc",
+  "revision": 4,
+  "volumes": [],
+  "status": "ACTIVE",
+  "requiresAttributes": [
+    {
+      "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+    },
+    {
+      "name": "ecs.capability.execution-role-awslogs"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.ecr-auth"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.task-iam-role"
+    },
+    {
+      "name": "ecs.capability.execution-role-ecr-pull"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+    },
+    {
+      "name": "ecs.capability.task-eni"
+    }
+  ],
+  "placementConstraints": [],
+  "compatibilities": ["EC2", "FARGATE"],
   "requiresCompatibilities": ["FARGATE"],
   "cpu": "1024",
   "memory": "4096",
   "runtimePlatform": {
-    "operatingSystemFamily": "LINUX",
-    "cpuArchitecture": null
-  }
+    "cpuArchitecture": "X86_64",
+    "operatingSystemFamily": "LINUX"
+  },
+  "registeredAt": "2023-12-06T04:54:21.430Z",
+  "registeredBy": "arn:aws:iam::166949175788:user/prediction_ecs_deploy",
+  "tags": []
 }
