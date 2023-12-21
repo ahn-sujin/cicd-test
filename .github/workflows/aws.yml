@@ -9,7 +9,7 @@ env:
   ECR_REPOSITORY: asj-cicd-test
   ECS_CLUSTER: asj-test-cluster
   ECS_SERVICE: asj-test-service
-  ECS_TASK_DEFINITION: ./github/task-definition.json
+  ECS_TASK_DEFINITION: ./.github/task-definition.json
   CONTAINER_NAME: asj-test-container
 
 jobs:
