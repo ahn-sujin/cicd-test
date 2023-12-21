@@ -1,4 +1,4 @@
-name: Test ECS Deploy
+name: Deploy to AWS ECS
 
 on:
   push:
@@ -28,29 +28,29 @@ jobs:
 
       # Github Repository Secrets를 통해 환경 변수 파일을 생성
       # TODO: Github Repository Secrets 환경 변수 세팅 해야함
-      - name: Creact .env file
-        run: |
-          echo "NEXT_PUBLIC_BASE_URL" >> .env
-          echo "NEXT_PUBLIC_GOOGLE_ANALYTICS" >> .env
-          echo "NEXT_PUBLIC_API_PAYMENT" >> .env
-          echo "NEXT_PUBLIC_IMP_UID" >> .env
-          echo "NEXT_PUBLIC_DOMAIN" >> .env
-          echo "NEXT_PUBLIC_QB_WEB_URL" >> .env
-          echo "NEXT_PUBLIC_MARKETING_COUNT_URL" >> .env
-        env:
-          NEXT_PUBLIC_BASE_URL: ${{ vars.NEXT_PUBLIC_BASE_URL }}
-          NEXT_PUBLIC_GOOGLE_ANALYTICS: ${{ vars.NEXT_PUBLIC_GOOGLE_ANALYTICS }}
-          NEXT_PUBLIC_API_PAYMENT: ${{ vars.NEXT_PUBLIC_API_PAYMENT }}
-          NEXT_PUBLIC_IMP_UID: ${{ vars.NEXT_PUBLIC_IMP_UID }}
-          NEXT_PUBLIC_DOMAIN: ${{ vars.NEXT_PUBLIC_DOMAIN }}
-          NEXT_PUBLIC_QB_WEB_URL: ${{ vars.NEXT_PUBLIC_QB_WEB_URL }}
-          NEXT_PUBLIC_MARKETING_COUNT_URL: ${{ vars.NEXT_PUBLIC_MARKETING_COUNT_URL }}
+      # - name: Creact .env file
+      #   run: |
+      #     echo "NEXT_PUBLIC_BASE_URL" >> .env
+      #     echo "NEXT_PUBLIC_GOOGLE_ANALYTICS" >> .env
+      #     echo "NEXT_PUBLIC_API_PAYMENT" >> .env
+      #     echo "NEXT_PUBLIC_IMP_UID" >> .env
+      #     echo "NEXT_PUBLIC_DOMAIN" >> .env
+      #     echo "NEXT_PUBLIC_QB_WEB_URL" >> .env
+      #     echo "NEXT_PUBLIC_MARKETING_COUNT_URL" >> .env
+      #   env:
+      #     NEXT_PUBLIC_BASE_URL: ${{ vars.NEXT_PUBLIC_BASE_URL }}
+      #     NEXT_PUBLIC_GOOGLE_ANALYTICS: ${{ vars.NEXT_PUBLIC_GOOGLE_ANALYTICS }}
+      #     NEXT_PUBLIC_API_PAYMENT: ${{ vars.NEXT_PUBLIC_API_PAYMENT }}
+      #     NEXT_PUBLIC_IMP_UID: ${{ vars.NEXT_PUBLIC_IMP_UID }}
+      #     NEXT_PUBLIC_DOMAIN: ${{ vars.NEXT_PUBLIC_DOMAIN }}
+      #     NEXT_PUBLIC_QB_WEB_URL: ${{ vars.NEXT_PUBLIC_QB_WEB_URL }}
+      #     NEXT_PUBLIC_MARKETING_COUNT_URL: ${{ vars.NEXT_PUBLIC_MARKETING_COUNT_URL }}
 
       # npmrc 파일 생성
-      - name: Creact .npmrc file
-        run: |
-          echo "//npm.pkg.github.com/:_authToken=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" >> .npmrc
-          echo "@predictionai:registry=https://npm.pkg.github.com/" >> .npmrc
+      # - name: Creact .npmrc file
+      #   run: |
+      #     echo "//npm.pkg.github.com/:_authToken=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" >> .npmrc
+      #     echo "@predictionai:registry=https://npm.pkg.github.com/" >> .npmrc
 
       # AWS 인증
       - name: Configure AWS credentials
