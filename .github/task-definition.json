@@ -2,7 +2,7 @@
   "containerDefinitions": [
     {
       "name": "asj-test-container",
-      "image": "166949175788.dkr.ecr.ap-northeast-2.amazonaws.com/asj-cicd-test:0eb08f9664c08293105f8eb5e189660870e83a2d",
+      "image": "166949175788.dkr.ecr.ap-northeast-2.amazonaws.com/asj-cicd-test:latest",
       "cpu": 0,
       "portMappings": [
         {
